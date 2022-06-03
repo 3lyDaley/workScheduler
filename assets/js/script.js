@@ -1,5 +1,4 @@
 // set & display the date at the top of the page
-// (LLLL) =  M/D/Y/T format
 var today = moment();
 var now = today.format('LLLL'); 
 const todaysDate = $('#currentDay');
