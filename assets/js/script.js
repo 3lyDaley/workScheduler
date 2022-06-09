@@ -16,3 +16,12 @@ var taskArrays = {
   "16": [],
   "17": []
 };
+
+// setting the task with save btn
+function setItem() {
+  for (i = 8; i < 18; i++) {
+    document.getElementById('i').value;
+    localStorage.setitem('text' + [i], 'hr' + [i]);
+  }
+}
+$('.saveBtn').click(setItem); 
