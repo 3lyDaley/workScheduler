@@ -4,12 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+  <!-- goog fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
   <title>WorkDay Scheduler</title>
 </head>
 
 <body>
  <header class = "jtron">
-   <h1>WORK DAY ORGANIZER * ORGANIZE YOUR WORKDAY</h1>
+   
+      <!-- HEADER TEXT ANIMATION-->
+      <div id="container">
+        <div id="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+            <defs>
+                <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+            </defs>
+            <circle cx="150" cy="100" r="75" fill="none"/>
+            <g>
+                <use xlink:href="#circlePath" fill="none"/>
+                <text fill="#000">
+                    <textPath xlink:href="#circlePath"> WORK DAY SCHEDULER   *  ORGANIZE YOUR WORKDAY *</textPath>
+                </text>
+            </g>
+        </svg>
+        </div>
+        </div>
    <p id= "currentDay"></p>
  </header> 
 

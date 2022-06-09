@@ -4,7 +4,10 @@ var now = today.format('LLLL');
 const todaysDate = $('#currentDay');
 todaysDate.text(now);
 
-var taskArrays = {
+let currentTime = moment().format("H");
+let hours = $(".time-block");
+
+var taskArray = {
   "8": [],
   "9": [],
   "10": [],
@@ -16,12 +19,34 @@ var taskArrays = {
   "16": [],
   "17": []
 };
+var createTasks = function() {
+  localStorage.setItem("taskArray", JSON.stringify(taskArray))
+};
 
-// setting the task with save btn
-function setItem() {
-  for (i = 8; i < 18; i++) {
-    document.getElementById('i').value;
-    localStorage.setitem('text' + [i], 'hr' + [i]);
+var loadTasks = function() {
+  var tasks = JSON.parse(localStorage.getItem("taskArray"));
+
+  // if nothing in localStorage, create a new object to track all task status arrays
+  if (!tasks) {
+    taskArray = {    
+      "8": [],
+      "9": [],
+      "10": [],
+      "11": [],
+      "12": [],
+      "13": [],
+      "14": [],
+      "15": [],
+      "16": [],
+      "17": []
+    };
+  } else if (tasks) {
+    taskArray = tasks;
+    $.each(tasks, function(taskHour) {
+      taskHour = $('#' + hour)
+    })
   }
-}
-$('.saveBtn').click(setItem); 
+};
+
+
+$('.saveBtn').click(loadTasks); 
