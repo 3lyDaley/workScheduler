@@ -21,18 +21,31 @@ function timeAudit () {
       }
     });
 }
-timeAudit();
+ timeAudit();
+
+// update task backgrounds on the hour
+//watches hour progression
+hourProgress = 3600000 - today.milliseconds(); 
+setTimeout(function() {
+    setInterval(timeAudit, 3600000)
+}, hourProgress);
 
 
+//when a save button is clicked, the task will be saved
+let btns = document.querySelectorAll('button');
 
-// WHEN I click the save button for that time block
-saveBtn.addEventListener("click", function() {
-
-  var time = $(this).siblings(".hour").text();
-  var plan = $(this).siblings(".taskArea").val();
-  console.log(time, plan);
-
-  // THEN the text for that event is saved in local storage
-  localStorage.setItem(time, plan);
-});
-
+for (i of btns) {
+  (function(i) {
+    i.addEventListener('click', function() {
+    var taskHour = parseInt($(this).attr('id'));
+    var taskText = $(this).siblings('textarea').val();
+    localStorage.setItem(taskHour, taskText);
+ 
+    console.log(taskHour, taskText);
+    
+    });
+  })(i);
+}
+  
+  
+ 
