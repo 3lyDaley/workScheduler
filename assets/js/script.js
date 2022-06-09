@@ -4,49 +4,22 @@ var now = today.format('LLLL');
 const todaysDate = $('#currentDay');
 todaysDate.text(now);
 
+var saveBtn = document.querySelector('.saveBtn');
+
 let currentTime = moment().format("H");
-let hours = $(".time-block");
+let taskHours = $(".hour");
 
-var taskArray = {
-  "8": [],
-  "9": [],
-  "10": [],
-  "11": [],
-  "12": [],
-  "13": [],
-  "14": [],
-  "15": [],
-  "16": [],
-  "17": []
-};
-var createTasks = function() {
-  localStorage.setItem("taskArray", JSON.stringify(taskArray))
-};
+function timeAudit () {
+  $.each(taskHours, function (i) {
+      var hourId = parseInt($(this).attr("id"));
+      if (hourId === currentTime) {
+        $(this).next().addClass("present");
+      } else if (hourId < currentTime) {
+        $(this).next().addClass("past");
+      } else if (hourId > currentTime) {
+        $(this).next().addClass("future");
+      }
+    });
+}
+timeAudit();
 
-var loadTasks = function() {
-  var tasks = JSON.parse(localStorage.getItem("taskArray"));
-
-  // if nothing in localStorage, create a new object to track all task status arrays
-  if (!tasks) {
-    taskArray = {    
-      "8": [],
-      "9": [],
-      "10": [],
-      "11": [],
-      "12": [],
-      "13": [],
-      "14": [],
-      "15": [],
-      "16": [],
-      "17": []
-    };
-  } else if (tasks) {
-    taskArray = tasks;
-    $.each(tasks, function(taskHour) {
-      taskHour = $('#' + hour)
-    })
-  }
-};
-
-
-$('.saveBtn').click(loadTasks); 

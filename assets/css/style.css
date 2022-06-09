@@ -15,7 +15,7 @@ body {
 /* *********************** THIS IS ALL HEADER TEXT ANIMATION ********************* */
 #container { margin: 0%; }
 
-#circle { position: relative; width: 100%; padding-bottom: 50%; overflow: hidden; }
+#circle { position: relative; width: 100%; padding-bottom: 350px; overflow: hidden; }
 
 #circle text { font-family: 'Helvetica Neue', Arial; font-size: 13.5px; font-weight: bold; }
 
@@ -74,7 +74,7 @@ body {
 }
 
 textarea{
-  background: transparent;
+  background-color: #92f39d;
   border-color: #032b2c;
   border-radius: 10px;
   resize: none;
@@ -90,13 +90,13 @@ textarea{
 
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #f7d85c;
   color: white;
   font-style: italic;
 }
 
 .present {
-  background-color: #ce3931;
+  background-color: #92f39d;
   color: white;
 }
 
@@ -120,7 +120,7 @@ textarea{
   font-size: 13.5px; 
   font-weight: bold;
   border: 1px solid #032b2c;
-  background-color: #b4c6b8;
+  background-color: #f19c2d;
   color: #032b2c;
   border-radius: 10px;
 }
