@@ -23,3 +23,16 @@ function timeAudit () {
 }
 timeAudit();
 
+
+
+// WHEN I click the save button for that time block
+saveBtn.addEventListener("click", function() {
+
+  var time = $(this).siblings(".hour").text();
+  var plan = $(this).siblings(".taskArea").val();
+  console.log(time, plan);
+
+  // THEN the text for that event is saved in local storage
+  localStorage.setItem(time, plan);
+});
+
