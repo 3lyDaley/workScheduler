@@ -12,13 +12,9 @@ let taskHours = $(".hour");
 function timeAudit () {
   $.each(taskHours, function (i) {
       var hourId = parseInt($(this).attr("id"));
-      if (hourId === currentTime) {
-        $(this).next().addClass("present");
-      } else if (hourId < currentTime) {
+      if (hourId < currentTime) {
         $(this).next().addClass("past");
-      } else if (hourId > currentTime) {
-        $(this).next().addClass("future");
-      }
+      } 
     });
 }
  timeAudit();
