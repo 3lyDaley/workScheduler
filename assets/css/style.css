@@ -3,6 +3,7 @@ body {
   font-size: 13.5px; 
   font-weight: bold;
   line-height: 1;
+  background-color: radial-gradient(rgb(250, 222, 225), rgb(255, 224, 161), rbg(220, 246, 252));
 }
 
 .jtron {
@@ -115,7 +116,7 @@ textarea{
   padding: 0;
 }
 
-.saveBtn {
+.saveBtn, .clearBtn  {
   font-family: 'Helvetica Neue', Arial; 
   font-size: 13.5px; 
   font-weight: bold;
@@ -125,7 +126,7 @@ textarea{
   border-radius: 10px;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
+.clearBtn {
+  display: block;
+  margin: auto;
 }

@@ -37,15 +37,37 @@ let btns = document.querySelectorAll('button');
 for (i of btns) {
   (function(i) {
     i.addEventListener('click', function() {
-    var taskHour = parseInt($(this).attr('id'));
+    var taskHour = $(this).siblings(".hour").text();
     var taskText = $(this).siblings('textarea').val();
-    localStorage.setItem(taskHour, taskText);
+    localStorage.setItem(taskHour, JSON.stringify(taskText));
  
-    console.log(taskHour, taskText);
+    console.log(taskHour);
     
     });
   })(i);
 }
-  
-  
+
+function loadTasks() {
+
+  $(".hour").each(function() {
+      var currHour = $(this).text();
+      var currTask = localStorage.getItem(currHour);
+
+      console.log(this);
+      console.log(currHour);
+
+      if(currTask !== null) {
+          $(this).siblings("textarea").val(currTask);
+      }
+  });
+}
+
+loadTasks();
+
+$('.clearBtn').click(function () {
+  localStorage.clear();
+  location.reload();
+})
+
+
  
